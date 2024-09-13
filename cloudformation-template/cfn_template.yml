@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Create an API Gateway and a HRAssistant Lambda function
+Description: Create an API Gateway and a Law and Contact Center Assistant Lambda function
 
 Parameters:
   SlackToken:
@@ -32,7 +32,7 @@ Resources:
   LambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
-      FunctionName: HRAssistantFunction
+      FunctionName: LawContactAssistantFunction
       Runtime: python3.12
       Code:
         ZipFile: |
@@ -155,8 +155,8 @@ Resources:
   ApiGateway:
     Type: AWS::ApiGateway::RestApi
     Properties:
-      Name: HRAssistantApiGateway
-      Description: HR Assistant API Gateway
+      Name: LawContactAssistantApiGateway
+      Description: Law and Contact Center Assistant API Gateway
       EndpointConfiguration:
         Types:
           - REGIONAL
